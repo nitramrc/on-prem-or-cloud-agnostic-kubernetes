@@ -9,9 +9,9 @@ spec:
   #tls:
   #- secretName: myapp-tls-staging
   #  hosts:
-  #  - myapp.newtech.academy
+  #  - myapp.overbinary.org
   rules:
-    - host: myapp.newtech.academy
+    - host: myapp.overbinary.org
       http:
         paths:
           - path: /
