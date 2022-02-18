@@ -13,4 +13,4 @@ spec:
     privateKeySecretRef:
       name: myapp-letsncrypt-staging
     # Enable HTTP01 validations
-    http01: {}
+    # http01: {}

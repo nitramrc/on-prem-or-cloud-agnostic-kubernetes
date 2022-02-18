@@ -12,4 +12,4 @@ spec:
     privateKeySecretRef:
       name: myapp-letsncrypt-prod
     # Enable HTTP01 validations
-    http01: {}
+    # http01: {}
