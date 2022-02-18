@@ -1,19 +1,36 @@
+# apiVersion: cert-manager.io/v1
+# kind: Certificate
+# metadata:
+#   name: myapp
+#   namespace: default
+# spec:
+#   secretName: myapp-tls-staging
+#   issuerRef:
+#     name: myapp-letsncrypt-staging
+#   commonName: myapp.overbinary.org
+#   #dnsNames:
+#   #- www.myapp.overbinary.org
+#   acme:
+#     config:
+#     - http01:
+#         ingress: myapp
+#       domains:
+#       - myapp.overbinary.org
+#       #- www.myapp.overbinary.org
+
+
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: myapp
-  namespace: default
 spec:
   secretName: myapp-tls-staging
+  dnsNames:
+  - myapp.overbinary.org
+  # - foo.example.com
   issuerRef:
     name: myapp-letsncrypt-staging
-  commonName: myapp.overbinary.org
-  #dnsNames:
-  #- www.myapp.overbinary.org
-  acme:
-    config:
-    - http01:
-        ingress: myapp
-      domains:
-      - myapp.overbinary.org
-      #- www.myapp.overbinary.org
+    # We can reference ClusterIssuers by changing the kind here.
+    # The default value is Issuer (i.e. a locally namespaced Issuer)
+    kind: ClusterIssuer
+    # group: cert-manager.io

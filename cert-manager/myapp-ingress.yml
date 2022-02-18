@@ -6,10 +6,10 @@ metadata:
   name: myapp
   namespace: default
 spec:
-  #tls:
-  #- secretName: myapp-tls-staging
-  #  hosts:
-  #  - myapp.overbinary.org
+  tls:
+  - secretName: myapp-tls-staging
+    hosts:
+    - myapp.overbinary.org
   rules:
     - host: myapp.overbinary.org
       http:
